@@ -1,10 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var specialCharacters = "!@#$%^&*+',-./:;<=>?~\|";
+/* var specialCharacters = "!@#$%^&*+',-./:;<=>?~\|";
 var alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var alphabetLower = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
-
+*/
 
 // Write password to the #password input
 function writePassword() {
@@ -26,7 +26,19 @@ function generatePassword() {
   };
 
   if (passLength => 8 && passLength <= 128) {
-    
+    lowerCaseQuestion = confirm("If you need lower case characters, select OK, otherwise select Cancel.")
+    upperCaseQuestion = confirm("If you need upper case characters, select OK, otherwise select Cancel.")
+    numbersQuestion = confirm("If you need numbers, select OK, otherwise select Cancel.")
+    specialCharactersQuestion  = confirm("If you need special characters, select OK, otherwise select Cancel.")
+
+      if (lowerCaseQuestion === false && upperCaseQuestion === false && numbersQuestion === false && specialCharactersQuestion === false) {
+        alert("Please choose at least one criteria.")
+        return generatePassword();
+      } else {
+        console.log("poop2")
+      }
+
+
   }
 
 };
