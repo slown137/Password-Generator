@@ -1,15 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var specialCharacters = "!@#$%^&*+',-./:;<=>?~\|";
+var random = ""
+var tempPass = ""
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
 
 function generatePassword() {
   var passLength = prompt("Enter the desired password length");
@@ -30,9 +23,7 @@ function generatePassword() {
       if (lowerCaseQuestion === false && upperCaseQuestion === false && numbersQuestion === false && specialCharactersQuestion === false) {
         alert("Please choose at least one criteria.")
         return generatePassword();
-      } else {
-        console.log("poop2")
-      };
+      }
 
       if (lowerCaseQuestion === true) {
         alphabetLower = "abcdefghijklmnopqrstuvwxyz";
@@ -58,8 +49,23 @@ function generatePassword() {
         specialCharacters = ""
       };
 
-  }
+      random = (alphabetLower + alphabetUpper + numbers + specialCharacters)
 
+      for (let i = 0; i < passLength; ++i) {
+          tempPass += random.charAt(Math.floor(Math.random() * random.length));
+      }
+
+  };
+
+  return (tempPass);
+
+};
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
 };
 
 // Add event listener to generate button
