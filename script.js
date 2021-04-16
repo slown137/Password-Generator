@@ -1,10 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-/* var specialCharacters = "!@#$%^&*+',-./:;<=>?~\|";
-var alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var alphabetLower = "abcdefghijklmnopqrstuvwxyz";
-var numbers = "0123456789";
-*/
+var specialCharacters = "!@#$%^&*+',-./:;<=>?~\|";
 
 // Write password to the #password input
 function writePassword() {
@@ -36,8 +32,31 @@ function generatePassword() {
         return generatePassword();
       } else {
         console.log("poop2")
-      }
+      };
 
+      if (lowerCaseQuestion === true) {
+        alphabetLower = "abcdefghijklmnopqrstuvwxyz";
+      } else {
+        alphabetLower = ""
+      };
+
+      if (upperCaseQuestion === true) {
+        alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      } else {
+        alphabetUpper = ""
+      };
+
+      if (numbersQuestion === true) {
+        numbers = "0123456789";
+      } else {
+        numbers = ""
+      };
+
+      if (specialCharactersQuestion === true) {
+        specialCharacters = "!@#$%^&*+',-./:;<=>?~\|";
+      } else {
+        specialCharacters = ""
+      };
 
   }
 
